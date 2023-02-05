@@ -10,7 +10,7 @@ npm i svelte-schema-forms
 ## Example
 ```svelte
 <script>
-    import {SchemaForm} from 'svelte-schema-form'
+    import {SchemaForm} from 'svelte-schema-forms'
     let configFormRow = [3,2,2]
     let configFieldRow = [3,3,3,3,3,3,3]
     let schema = {

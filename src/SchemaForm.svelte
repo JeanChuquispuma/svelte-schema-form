@@ -130,7 +130,7 @@
                     {#if value[1]["type"] == "textarea"}
                         <textarea class="form-control" id="{value[0]}" rows="3" on:input={updateFormData(event,value[0])}></textarea>
                     {:else if value[1]["type"] == "select"}
-                        <select class="form-control" id="{value[0]}" on:change={updateFormData(event, value[0])}>
+                        <select class="form-select" id="{value[0]}" on:change={updateFormData(event, value[0])}>
                             <option value="">-- Select --</option>
                             {#each Object.entries(value[1]["data"]) as val, k}
                                <option value="{val[1][value[1]["valueData"]]}">{val[1][value[1]["textData"]]}</option>
