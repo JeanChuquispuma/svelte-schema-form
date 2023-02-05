@@ -98,7 +98,7 @@
         if(val == true){
             return 'd-none'
         }else{
-            return 'd-flex'
+            return 'd-sm-flex'
         }
     }
 
