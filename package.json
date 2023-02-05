@@ -1,5 +1,5 @@
 {
-  "name": "svelte-schema-form",
+  "name": "svelte-schema-forms",
   "version": "0.0.1",
   "description": "A simple, automatic form builder for svelte using arbitrary form data from a specified schema.",
   "main": "dist/index.js",
