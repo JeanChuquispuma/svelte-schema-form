@@ -124,7 +124,7 @@
             {/if}
             <div class="col-12 col-md-{recordRow(key)} {setDisplayNone(value[1]["hidden"])} mb-2 mt-2">
                 {#if value[1]["type"] != "array"}
-                <label for="{value[0]}" class="col-sm-3 col-form-label">{value[1]["label"]}</label>
+                <label for="{value[0]}" class="col-12 col-sm-3 col-form-label">{value[1]["label"]}</label>
                 {/if}
                 <div class="col-12 col-sm-9">
                     {#if value[1]["type"] == "textarea"}
@@ -169,13 +169,13 @@
             {/if}
             <div class="col-12 col-md-{recordRow(key)} {setDisplayNone(value[1]["hidden"])} mb-2 mt-2">
                 {#if value[1]["type"] != "array"}
-                <label for="{value[0]}" class="col-sm-3 col-form-label">{value[1]["label"]}</label>
+                <label for="{value[0]}" class="col-12 col-sm-3 col-form-label">{value[1]["label"]}</label>
                 {/if}
                 <div class="col-12 col-sm-9">
                     {#if value[1]["type"] == "textarea"}
                         <textarea class="form-control" id="{value[0]}" rows="3" on:input={updateArrayData(event,value[0])}>{valUpdateArray(value[0])}</textarea>
                     {:else if value[1]["type"] == "select"}
-                        <select class="form-control" id="{value[0]}" value={valUpdateArray(value[0])} on:change={updateArrayData(event, value[0])}>
+                        <select class="form-select" id="{value[0]}" value={valUpdateArray(value[0])} on:change={updateArrayData(event, value[0])}>
                             <option value="">-- Select --</option>
                             {#each Object.entries(value[1]["data"]) as val, k}
                                <option value="{val[1][value[1]["valueData"]]}">{val[1][value[1]["textData"]]}</option>
