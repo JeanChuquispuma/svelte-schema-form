@@ -1,0 +1,28 @@
+{
+  "name": "svelte-schema-form",
+  "version": "0.0.1",
+  "description": "A simple, automatic form builder for svelte using arbitrary form data from a specified schema.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "svelte": "src/index.js",
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs",
+    "dev": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeanChuquispuma/svelte-schema-form.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeanChuquispuma/svelte-schema-form/issues"
+  },
+  "homepage": "https://github.com/JeanChuquispuma/svelte-schema-form#readme",
+  "devDependencies": {
+    "rollup": "^3.12.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^7.1.0",
+    "svelte": "^3.55.1"
+  }
+}
