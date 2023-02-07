@@ -2,6 +2,10 @@
 
 Schema Forms to Json for Svelte
 
+# Requirements
+
+This package work with bootstrap
+
 ## Install
 ```bash
 npm i svelte-schema-forms
@@ -11,7 +15,7 @@ npm i svelte-schema-forms
 ```svelte
 <script>
     import {SchemaForm} from 'svelte-schema-forms'
-    let configFormRow = [3,2,2]
+    let configFormRow = [3,2,2,2,2,2,2]
     let configFieldRow = [3,3,3,3,3,3,3]
     let schema = {
       "title": {
@@ -136,6 +140,54 @@ npm i svelte-schema-forms
         "label" : "Description",
         "type": "textarea",
         "hidden" : true
+      },
+      "Lista" : {
+        "label" : "Lista",
+        "type" : "list",
+        "data" : [
+          {
+            "codigo" : "001",
+            "departamento" : "LIMA",
+            "ubigeo" : "015244"
+          },
+          {
+            "codigo" : "002",
+            "departamento" : "JUNIN",
+            "ubigeo" : "11111"
+          },
+          {
+            "codigo" : "003",
+            "departamento" : "HUANCAVELICA",
+            "ubigeo" : "22221"
+          }
+        ],
+        "posValue" : "0",
+        "posText" : "1",
+        "valueData" : "codigo"
+      },
+      "Lista2" : {
+        "label" : "Lista2",
+        "type" : "list",
+        "data" : [
+          {
+            "codigo" : "005",
+            "provincia" : "CHOSICA",
+            "ubigeo" : "333333"
+          },
+          {
+            "codigo" : "008",
+            "provincia" : "HUANCAYO",
+            "ubigeo" : "44444"
+          },
+          {
+            "codigo" : "004",
+            "provincia" : "HUANCAVELICA",
+            "ubigeo" : "4444"
+          }
+        ],
+        "posValue" : "0",
+        "posText" : "1",
+        "valueData" : "codigo"
       }
     }
   
@@ -150,12 +202,14 @@ npm i svelte-schema-forms
 
     let formData = {}
 
+    $: console.log(formData)
+
   </script>
         <SchemaForm
         {schema}
         {configFormRow}
         {configFieldRow}
-        {formData}
+        bind:formData={formData}
         txtSubmit = "Siguiente"
         txtBack = "Atras"
         displayBack = true
@@ -163,6 +217,5 @@ npm i svelte-schema-forms
         onSubmit={handleSubmit}
         onBack={handleChange}
 />
-
   
 ```

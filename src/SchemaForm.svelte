@@ -1,5 +1,6 @@
 <script>
     import ArrayField from "./ArrayField.svelte"
+    import ListField from "./ListField.svelte"
 
     export let schema
     export let classForm
@@ -20,10 +21,10 @@
 
     const submit = () => {
         mainArray.forEach((value, index)=>{
-            console.log( "el index es: " + index + " El valor es: " )
-            console.log(value )
+            //console.log( "el index es: " + index + " El valor es: " )
+            //console.log(value )
 
-            console.log(Object.entries(schema)[index][0])
+            //console.log(Object.entries(schema)[index][0])
             let indexTemp = Object.entries(schema)[index][0]
             formData[indexTemp] = mainArray[index]
         })
@@ -102,6 +103,8 @@
         }
     }
 
+    let valor = {}
+
 </script>
 <!--<div class="row">
     {#if itsArray}
@@ -145,6 +148,8 @@
                         {/each}
                     {:else if value[1]["type"] == "array"}
                     <br>
+                    {:else if value[1]["type"] == "list"}
+                        <ListField posValue={value[1]["posValue"]} posText={value[1]["posText"]} bind:returnValue={formData[value[0]]} contentData={value[1]["data"]}/>
                     {:else}
                         <input type="{value[1]["type"]}" class="form-control" id="{value[0]}" placeholder="{value[1]["placeholder"]}" on:input={updateFormData(event, value[0])}>
                     {/if}
