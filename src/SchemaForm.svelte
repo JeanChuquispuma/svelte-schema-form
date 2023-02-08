@@ -236,8 +236,4 @@
         font-size: 0.7rem;
     }
 
-    .hrdivider > hr {
-        border: 1px;
-    }
-
 </style>
