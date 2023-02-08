@@ -222,17 +222,22 @@
     .hrdivider {
         position: relative;
         margin-bottom: 20px;
+        margin-top: 10px;
         width: 100%;
         text-align: center;
     }
 
     .hrdivider span {
         position: absolute;
-        top: 0.3rem;
+        top: 0.35rem;
         background: #fff;
         padding: 0 1rem;
         font-weight: bold;
         font-size: 0.7rem;
+    }
+
+    .hrdivider hr {
+        border: 1px;
     }
 
 </style>
