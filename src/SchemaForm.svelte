@@ -115,7 +115,6 @@
     {/if}
 </div>-->
 <div class="{classForm}">
-    <form on:submit|preventDefault>
         {#if !itsArray}
         <div class="row">
             {#each Object.entries(schema) as value, key}
@@ -203,5 +202,4 @@
             {/each}
         </div>
         {/if}
-    </form>
 </div>
