@@ -124,6 +124,12 @@
             </div>
             <ArrayField contentArray={value[1]["contentArray"]} {configFieldRow} arrayData={mainArray[key]=[]}></ArrayField>
             {/if}
+            {#if value[1]["type"] == "hr"}
+            <div class="hrdivider col-12">
+                <hr/>
+                <span>{value[1]["label"]}</span>
+            </div>
+            {/if}
             <div class="col-12 col-md-{recordRow(key)} {setDisplayNone(value[1]["hidden"])} mb-2 mt-2">
                 {#if value[1]["type"] != "array"}
                 <label for="{value[0]}" class="col-12 col-sm-3 col-form-label">{value[1]["label"]}</label>
@@ -171,6 +177,12 @@
             </div>
             <ArrayField contentArray={value[1]["contentArray"]} {configFieldRow}></ArrayField>
             {/if}
+            {#if value[1]["type"] == "hr"}
+            <div class="hrdivider col-12">
+                <hr/>
+                <span>{value[1]["label"]}</span>
+            </div>
+            {/if}
             <div class="col-12 col-md-{recordRow(key)} {setDisplayNone(value[1]["hidden"])} mb-2 mt-2">
                 {#if value[1]["type"] != "array"}
                 <label for="{value[0]}" class="col-12 col-sm-3 col-form-label">{value[1]["label"]}</label>
@@ -194,6 +206,8 @@
                         {/each}
                     {:else if value[1]["type"] == "array"}
                     <br>
+                    {:else if value[1]["type"] == "list"}
+                        <ListField posValue={value[1]["posValue"]} posText={value[1]["posText"]} bind:returnValue={formData[value[0]]} contentData={value[1]["data"]}/>
                     {:else}
                         <input type="{value[1]["type"]}" class="form-control" id="{value[0]}" placeholder="{value[1]["placeholder"]}" value={valUpdateArray(value[0])} on:input={updateArrayData(event, value[0])}>
                     {/if}
@@ -203,3 +217,22 @@
         </div>
         {/if}
 </div>
+
+<style>
+    .hrdivider {
+        position: relative;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hrdivider span {
+        position: absolute;
+        top: 0.3rem;
+        background: #fff;
+        padding: 0 1rem;
+        font-weight: bold;
+        font-size: 0.7rem;
+    }
+
+</style>

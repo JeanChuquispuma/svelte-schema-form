@@ -26,10 +26,6 @@
         modalVisible = false
     }
 
-    const content = () => {
-        console.log(contentData)
-    }
-
     const searching = (e) => {
         let value = e.target.value
         let tmpOfTmp = tempContentData.filter(v=> Object.keys(v).filter(key=> v[key].toString().toLowerCase().includes(value.toString().toLowerCase())).length > 0)
@@ -47,7 +43,6 @@
 
         contFocus = 0
 
-        console.log(tempContentData)
     }
 
     const selectFocus = (e) => {
