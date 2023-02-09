@@ -109,7 +109,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {#each tempContentData as value, key}
+                            {#each tempContentData.slice(0, 12) as value, key}
                                 {#if key == contFocus}
                                     <tr class='bg bg-primary text-white' on:click={()=>{selectMobile(event, key)}}>
                                         {#each Object.entries(value) as val, key}
